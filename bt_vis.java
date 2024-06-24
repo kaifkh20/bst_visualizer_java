@@ -78,7 +78,7 @@ class bt_vis{
         BST root = new BST(null);
 
         while(true){      
-            System.out.println("1)Enter a number to insert");
+            System.out.println("\n1)Enter a number to insert");
             System.out.println("2)Enter -1 to exit.");            
             // BST root = new BST(null);
             int val = sc.nextInt();            
