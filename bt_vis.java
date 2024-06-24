@@ -48,12 +48,13 @@ class BST{
             sb.append(node.value);
             sb.append("\n");
             StringBuilder paddingBuilder = new StringBuilder(padding);
-            paddingBuilder.append("| ");
+            // paddingBuilder.append("\t".repeat(depth-1));
+            paddingBuilder.append("|\t");
 
             String paddingForBoth = paddingBuilder.toString();
-            String tab = "\t";
-            String pointerForRight = tab.repeat(depth)+"└── (r)";
-            String pointerForLeft = (node.right != null) ? tab.repeat(depth)+"├── (l)" : tab.repeat(depth)+"└── (l)";
+            // String tab = "\t";
+            String pointerForRight = "└── (r)";
+            String pointerForLeft = (node.right != null) ? "├── (l)" : "└── (l)";
 
 
             traverseOrder(sb, paddingForBoth, pointerForLeft ,node.left,depth+1);
