@@ -11,16 +11,21 @@ class BST{
 
     void Insert(Integer value,BST current){
 
-        if(current.value==null){
+        // For root node
+        if(current.value==null){ 
             current.value = value;
             return;
-        }
+        } 
+
+        // Insertion at right
 
         if(value>current.value && current.right==null){
             current.right = new BST(value);
         }else if(value>current.value && current.right!=null){
             Insert(value, current.right);
         }
+
+        // Insertion at left
 
         if(value<=current.value && current.left==null){
             current.left = new BST(value);
@@ -31,10 +36,9 @@ class BST{
         // return;        
     }
 
-    void traverseOrder(StringBuilder sb,String padding,String pointer,BST node,int depth){
+    // Pre order traversal
 
-        // int depth = 0;
-
+    void traverseOrder(StringBuilder sb,String padding,String pointer,BST node,int depth){        
         if(node!=null){
             sb.append(padding);
             if(padding.equals("(root)")){
@@ -55,7 +59,6 @@ class BST{
             traverseOrder(sb, paddingForBoth, pointerForLeft ,node.left,depth+1);
             traverseOrder(sb, paddingForBoth, pointerForRight, node.right,depth+1);
         }
-
     }
 
     void print(){
@@ -74,8 +77,7 @@ class bt_vis{
         
         BST root = new BST(null);
 
-        while(true){
-            
+        while(true){      
             System.out.println("Enter a number");
             System.out.println("Enter -1 to exit.");            
             // BST root = new BST(null);
@@ -85,7 +87,7 @@ class bt_vis{
             System.out.println("Inserted\n");
             root.print();
         }
-        System.out.println("Meet you soon :-)");
+        System.out.println("See you soon :-)");
         sc.close();
     }
 }
