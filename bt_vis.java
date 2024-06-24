@@ -64,7 +64,7 @@ class BST{
     void print(){
         StringBuilder sb = new StringBuilder();
         traverseOrder(sb, "(root)", "", this,1); 
-        System.out.println(sb.toString());
+        System.out.println("\n"+sb.toString());
     }
 
 }
@@ -78,8 +78,8 @@ class bt_vis{
         BST root = new BST(null);
 
         while(true){      
-            System.out.println("Enter a number");
-            System.out.println("Enter -1 to exit.");            
+            System.out.println("1)Enter a number to insert");
+            System.out.println("2)Enter -1 to exit.");            
             // BST root = new BST(null);
             int val = sc.nextInt();            
             root.Insert(val, root);
@@ -87,7 +87,7 @@ class bt_vis{
             System.out.println("Inserted\n");
             root.print();
         }
-        System.out.println("See you soon :-)");
+        System.out.println("\nSee you soon :-)");
         sc.close();
     }
 }
